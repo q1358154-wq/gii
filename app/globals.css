@@ -158,6 +158,89 @@ h1 {
 
 .symbol-row {
   margin-top: 13px;
+  gap: 10px;
+}
+
+/* =========================
+   ASSET SELECTOR
+   ========================= */
+
+.asset-selector {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.asset-selector button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 1px solid #29292e;
+  border-radius: 10px;
+  background: #0d0d10;
+  color: #77777e;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.asset-selector button:hover {
+  background: #151518;
+  border-color: #3a3a40;
+  color: #d8d8dc;
+}
+
+.asset-selector button.selected {
+  border-color: #55555c;
+  background:
+    linear-gradient(
+      145deg,
+      #19191d,
+      #0e0e11
+    );
+  color: #f1f1f3;
+  box-shadow:
+    0 0 18px
+      rgba(255, 255, 255, 0.04);
+}
+
+.asset-selector button strong {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.asset-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #34343a;
+  border-radius: 50%;
+  background: #111114;
+  color: #d8d8dc;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.asset-icon-hype {
+  border-color: #55555c;
+}
+
+.asset-icon-sui {
+  font-size: 10px;
+}
+
+.asset-icon-jitosol {
+  border-color: #4a4a50;
 }
 
 .symbol-row strong {
@@ -387,26 +470,22 @@ h1 {
   color: #cfcfd3;
 }
 
-.agent.positive
-  .agent-core {
+.agent.positive .agent-core {
   border-color: #99999f;
 }
 
-.agent.warning
-  .agent-core {
+.agent.warning .agent-core {
   border-color: #77777e;
 }
 
-.agent.risk
-  .agent-core {
+.agent.risk .agent-core {
   border-color: #dedee2;
   box-shadow:
     0 0 18px
       rgba(255, 255, 255, 0.08);
 }
 
-.agent.locked
-  .agent-core {
+.agent.locked .agent-core {
   border-color: #45454b;
   color: #77777e;
 }
@@ -623,6 +702,21 @@ h1 {
 
   .hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .symbol-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .asset-selector {
+    width: 100%;
+  }
+
+  .asset-selector button {
+    flex: 1 1 auto;
+    justify-content: center;
   }
 
   .network-stage {
